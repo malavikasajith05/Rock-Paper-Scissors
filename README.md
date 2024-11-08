@@ -1,6 +1,8 @@
 # Rock-paper-scissors
  Kreativestorm
 
+ Preview Link: https://malavikasajith05.github.io/Rock-paper-scissors/
+
  This is a simple Rock, Paper, Scissors game built with JavaScript, where players can challenge an AI opponent.<br> The game is played entirely in the browser console, with prompts guiding the player through each round. <br> The game also handles invalid inputs and allows the player to play multiple rounds if desired.
 
  Features:<br>
