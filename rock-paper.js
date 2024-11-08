@@ -59,3 +59,26 @@ if (result.includes("Win")) {
 // Show the result and updated score for the current round
 alert(`Round ${i + 1}: ${result} | Current Score - You: ${playerScore}, AI: ${computerScore}`);
 }
+
+// Update scores based on the result
+if (result.includes("Win")) {
+    playerScore++;
+} else if (result.includes("Lose")) {
+    computerScore++;
+}
+// Show the result and updated score for the current round
+alert(`Round ${i + 1}: ${result} | Current Score - You: ${playerScore}, AI: ${computerScore}`);
+}
+    finalMessage = `Sorry! You lost the game with a score of ${playerScore} to ${computerScore}`;
+} else {
+    finalMessage = "It's a tie!";
+}
+alert("Game Over! " + finalMessage);
+// Ask if the user wants to play another round
+playAgain = prompt("Do you want to play one more round? Press Y for yes and N for no.");
+} while (playAgain && playAgain.toLowerCase() === "y");
+    
+alert("Thanks for playing! Goodbye!");
+}
+
+game();
