@@ -28,7 +28,7 @@ function capitalize(word) {
 function game() {
     let playAgain;
     do {
-        const startGame = prompt("Hey! Do you want to play Rock, Paper, Scissors? Press Y to start, or N to quit."
+        const startGame = prompt("Hey! Do you want to play Rock, Paper, Scissors? Press Y to start, or N to quit.")
 
         if (startGame.toLowerCase() !== "y") {
             alert("Alright, maybe next time! Goodbye!");
@@ -69,7 +69,7 @@ if (result.includes("Win")) {
 // Show the result and updated score for the current round
 alert(`Round ${i + 1}: ${result} | Current Score - You: ${playerScore}, AI: ${computerScore}`);
 }
-    finalMessage = `Sorry! You lost the game with a score of ${playerScore} to ${computerScore}`;
+   let finalMessage = `Sorry! You lost the game with a score of ${playerScore} to ${computerScore}`;
 } else {
     finalMessage = "It's a tie!";
 }
