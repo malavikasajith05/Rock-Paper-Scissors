@@ -37,12 +37,12 @@ function game() {
 
             if (playerSelection === null) {
                 alert("Thanks for playing! Goodbye!");
-                return; // Exit the game if the user presses "Cancel"
+                return; 
             }
 
             if (!["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
                 alert("Invalid choice! Please enter Rock, Paper, or Scissors.");
-                i--; // Repeat the round for an invalid choice
+                i--; 
                 continue;
             }
 
@@ -67,7 +67,7 @@ function game() {
         }
         alert("Game Over! " + finalMessage);
 
-        // Ask if the user wants to play another round
+        
         playAgain = prompt("Do you want to play one more game? Enter Y for yes, or press Cancel to quit.");
 
     } while (playAgain && playAgain.toLowerCase() === "y");
