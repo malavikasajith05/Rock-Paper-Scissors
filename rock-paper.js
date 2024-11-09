@@ -1,8 +1,10 @@
+
 const choices = ["rock", "paper", "scissors"];
 function computerPlay() {
     
     return choices[Math.floor(Math.random() * choices.length)];
 }
+
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection.toLowerCase()) {
@@ -18,16 +20,18 @@ function playRound(playerSelection, computerSelection) {
         return `You Lose! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}`;
     }
 }
+
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
 function getPlayerSelection() {
     let playerSelection;
     do {
         playerSelection = prompt("Enter Rock, Paper, or Scissors to play or press Cancel to quit:");
         if (playerSelection === null) {
             alert("Thanks for playing! Goodbye!");
-            return null; 
+            return null; // Exit the game if the user presses "Cancel"
         }
         if (!choices.includes(playerSelection.toLowerCase().trim())) {
             alert("Invalid choice! Please enter Rock, Paper, or Scissors.");
@@ -35,6 +39,7 @@ function getPlayerSelection() {
     } while (!choices.includes(playerSelection.toLowerCase().trim()));
     return playerSelection;
 }
+
 function showFinalMessage(playerScore, computerScore) {
     let finalMessage;
     if (playerScore > computerScore) {
@@ -47,6 +52,7 @@ function showFinalMessage(playerScore, computerScore) {
     }
     alert("Game Over! " + finalMessage);
 }
+
 function game() {
     let playAgain;
     do {
@@ -55,7 +61,7 @@ function game() {
         for (let i = 0; i < 5; i++) {
             const playerSelection = getPlayerSelection();
             if (playerSelection === null) {
-                return; 
+                return; // Exit the game if the user presses "Cancel"
             }
             const computerSelection = computerPlay();
             const result = playRound(playerSelection, computerSelection);
@@ -66,10 +72,13 @@ function game() {
             }
             alert(`Round ${i + 1}: ${result} | Current Score - You: ${playerScore}, AI: ${computerScore}`);
         }
-        showFinalMessage(playerScore, computerScore); 
-        
+        showFinalMessage(playerScore, computerScore); // Show the final message after all rounds
+
+        // Ask if the user wants to play another round
         playAgain = confirm("Do you want to play one more game?");
     } while (playAgain);
     alert("Thanks for playing! Goodbye!");
 }
+
+
 game();
